@@ -1,0 +1,51 @@
+
+ 
+
+ 1. First Setup Jest 
+      - go to - https://www.robinwieruch.de/webpack-setup-tutorial/
+          - scroll down to Webpack Setup
+      - next go to https://www.robinwieruch.de/webpack-babel-setup-tutorial/
+
+ 2. Next go to https://www.robinwieruch.de/react-testing-jest/
+      - scroll to Jest Testing in React Setup
+      - npm install --save-dev jest
+
+      - In your package.json file, create a new npm script which runs Jest:
+            "test": "jest --config ./jest.config.json"
+      - Next, we can define this optional configuration for Jest in a configuration file. 
+        Create it on the command line:
+           touch jest.config.json
+        
+      - Update jest.config.json:
+          {
+          "testRegex": "((\\.|/*.)(spec))\\.js?$"
+          }
+
+      -  touch src/App.spec.js
+
+      - implement your first test case:
+         describe('My Test Suite', () => {
+          it('My Test Case', () => {
+          expect(true).toEqual(true);
+          });
+          });
+      - run "npm test" 
+
+      - done. Go to Step3.
+
+ STEP3. Go to https://www.robinwieruch.de/react-testing-library/
+
+     npm install jsdom --save-dev
+     npm install @testing-library/react @testing-library/jest-dom --force
+
+    - Scroll down "React Testing Library: Rendering a Component"
+    - populate src/App.js with code from tutorial
+
+    - populate App.test.js with your test suites
+
+    - RTL's RENDER function takes any JSX as argument to render it as output. 
+    Afterward, you should have access to the React component in your test. 
+    To convince yourself that it's there, you can use RTL's DEBUG function:
+        screen.debug();
+
+    - do npm run test -- --watchAll
